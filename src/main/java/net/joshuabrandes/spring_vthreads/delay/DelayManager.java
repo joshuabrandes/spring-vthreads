@@ -1,6 +1,5 @@
 package net.joshuabrandes.spring_vthreads.delay;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
