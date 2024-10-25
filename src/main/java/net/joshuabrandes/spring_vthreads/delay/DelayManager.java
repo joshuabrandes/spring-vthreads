@@ -1,5 +1,7 @@
 package net.joshuabrandes.spring_vthreads.delay;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -9,13 +11,17 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @RestController
 @ResponseBody
+@RequiredArgsConstructor
 class DelayController {
 
+    private final ApplicationEventPublisher eventPublisher;
     final WebClient webClient = WebClient.create();
 
     @PostMapping("/delay")
     public ResponseEntity<String> delay() {
         var url = "https://httpstat.us/200?sleep=5000";
+
+        eventPublisher.publishEvent("Delaying for 5 seconds...");
 
         return ResponseEntity.ok()
                 .body(new RestTemplate()
