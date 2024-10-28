@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 class DelayController {
 
-    private final ApplicationEventPublisher eventPublisher;
+    final ApplicationEventPublisher eventPublisher;
 
     @PostMapping("/delay")
     public ResponseEntity<String> delay() {
