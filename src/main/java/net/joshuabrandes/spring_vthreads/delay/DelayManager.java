@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.reactive.function.client.WebClient;
 
 @RestController
 @ResponseBody
@@ -15,7 +14,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 class DelayController {
 
     private final ApplicationEventPublisher eventPublisher;
-    final WebClient webClient = WebClient.create();
+    // final WebClient webClient = WebClient.create();
 
     @PostMapping("/delay")
     public ResponseEntity<String> delay() {
