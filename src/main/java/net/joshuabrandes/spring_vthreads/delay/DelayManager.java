@@ -14,7 +14,6 @@ import org.springframework.web.client.RestTemplate;
 class DelayController {
 
     private final ApplicationEventPublisher eventPublisher;
-    // final WebClient webClient = WebClient.create();
 
     @PostMapping("/delay")
     public ResponseEntity<String> delay() {
